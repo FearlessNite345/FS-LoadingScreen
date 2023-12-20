@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.text-bottom {
+	position: fixed;
+	bottom: 5%;
+	left: 50%;
+	transform: translateX(-50%);
+}
