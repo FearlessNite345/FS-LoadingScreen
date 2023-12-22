@@ -3,7 +3,7 @@
 <script lang="ts">
 	import loadingVideo from './assets/loadingScreen.mp4'
 	import logo from './assets/logo.png'
-	import music from './assets/music2.mp3'
+	import music from './assets/music.mp3'
 
 	import Welcome from '@components/Welcome.svelte'
 	import { RESOURCE_NAME, actualPercent } from '@store/stores'
