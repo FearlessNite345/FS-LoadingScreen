@@ -3,10 +3,10 @@
 <script lang="ts">
 	import loadingVideo from './assets/loadingScreen.mp4'
 	import logo from './assets/logo.png'
-	import music from './assets/music.mp3'
+	import music from './assets/music2.mp3'
 
 	import Welcome from '@components/Welcome.svelte'
-	import { RESOURCE_NAME } from '@store/stores'
+	import { RESOURCE_NAME, actualPercent } from '@store/stores'
 	import { onMount } from 'svelte'
 	import ProgressBar from '@components/ProgressBar.svelte'
 	import NewsSection from '@components/NewsSection.svelte'
@@ -14,7 +14,7 @@
 
 	$RESOURCE_NAME = 'FearlessStudios-LoadingScreen' // Change this to your resource name (case sensitive)
 
-	$: percent = 100
+	$: percent = 75
 	$: loadingName = 'Loading...'
 	$: name = 'Name'
 	$: staffMembers = []
@@ -24,16 +24,18 @@
 
 	onMount(() => {
 		musicElement.volume = 0.1
+		actualPercent.set(percent)
 
 		window.addEventListener('message', function (e) {
 			var data = e.data
 			if (data.eventName === 'loadProgress') {
 				percent = Math.round(data.loadFraction * 100)
+				actualPercent.set(percent)
 			} else if (data.eventName === 'onLogLine') {
 				loadingName = data.message
 			} else {
 				if (data.name != null) {
-					loadingName = data.name
+					loadingName = 'Loading: ' + data.name
 				}
 			}
 		})

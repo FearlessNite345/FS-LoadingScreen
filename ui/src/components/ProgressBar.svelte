@@ -1,15 +1,28 @@
 <!-- ProgressBar.svelte -->
 <script>
+	import { actualPercent } from '@store/stores'
+	import { tweened } from 'svelte/motion'
+
 	export let percent
 	export let loadingName
+
+	
+	actualPercent.subscribe((newValue) => {
+		percent = Math.round(newValue) 
+	})
+
+	console.log($actualPercent)
 </script>
 
 <div class="fixed bottom-0 w-full">
 	<div class="h-3 bg-gray-900"></div>
-	<div
-		class="h-6 bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 background-animate"
-		style="width: {percent}%;"
-	></div>
+	<div class="h-6 bg-zinc-950">
+		<div
+			class="h-6 bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 background-animate"
+			style="width: {percent}%;"
+		></div>
+	</div>
+
 	<div class="bg-gray-900 p-4 h-24 flex items-center justify-between">
 		<div>
 			<h1 class="text-lg font-semibold text-white">{loadingName}</h1>
