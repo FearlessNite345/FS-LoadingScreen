@@ -72,7 +72,7 @@
 		<ProgressBar {percent} {loadingName} />
 
 		<div
-			class="bg-zinc-950 space-y-5 fixed rounded bg-opacity-50 p-5 left-10 top-28 flex flex-col"
+			class="bg-zinc-950 space-y-5 fixed rounded bg-opacity-50 p-5 left-10 top-36 flex flex-col"
 			class:hidden={staffMembers.length === 0}
 		>
 			<h1 class="text-blue-500 font-bold text-4xl text-center">Staff</h1>
@@ -82,7 +82,7 @@
 		</div>
 
 		<div
-			class="bg-zinc-950 space-y-5 fixed rounded bg-opacity-50 p-5 right-10 top-28 flex flex-col"
+			class="bg-zinc-950 space-y-5 fixed rounded bg-opacity-50 p-5 right-10 top-36 flex flex-col"
 			class:hidden={news.length === 0}
 		>
 			<h1 class="text-blue-500 font-bold text-4xl text-center">News</h1>
