@@ -1,9 +1,9 @@
 <!-- App.svelte -->
 
 <script lang="ts">
-	import loadingVideo from './assets/loadingScreen.mp4'
-	import logo from './assets/logo.png'
-	import music from './assets/music.mp3'
+	import loadingVideo from '@assets/loadingScreen.webm'
+	import logo from '@assets/logo.png'
+	import music from '@assets/music.mp3'
 
 	import Welcome from '@components/Welcome.svelte'
 	import { RESOURCE_NAME, actualPercent } from '@store/stores'

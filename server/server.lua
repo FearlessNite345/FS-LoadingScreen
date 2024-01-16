@@ -3,8 +3,8 @@ AddEventHandler('playerConnecting', function(_, _, deferrals)
 
     deferrals.handover({
         name = GetPlayerName(source),
-        staffMembers = config.staffMembers,
-        news = config.news,
-        showLogo = config.showLogo
+        staffMembers = Config.staffMembers,
+        news = Config.news,
+        showLogo = Config.showLogo
     })
 end)
