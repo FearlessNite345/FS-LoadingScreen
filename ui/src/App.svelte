@@ -1,29 +1,30 @@
-<!-- App.svelte -->
-
 <script lang="ts">
-	import loadingVideo from '@assets/loadingScreen.webm'
-	import logo from '@assets/logo.png'
+	import loadingVideo from '@assets/server.mp4'
 	import music from '@assets/music.mp3'
 
 	import Welcome from '@components/Welcome.svelte'
-	import { RESOURCE_NAME, actualPercent } from '@store/stores'
+	import {
+		NUI_HANDOVER_DATA,
+		RESOURCE_NAME,
+		actualPercent,
+		actualVolume,
+	} from '@store/stores'
 	import { onMount } from 'svelte'
 	import ProgressBar from '@components/ProgressBar.svelte'
-	import NewsSection from '@components/NewsSection.svelte'
-	import StaffMember from '@components/StaffMember.svelte'
 
-	$RESOURCE_NAME = 'FearlessStudios-LoadingScreen' // Change this to your resource name (case sensitive)
+	$RESOURCE_NAME = 'FearlessStudios-LoadingScreen'
 
-	$: percent = 75
+	$: percent = 0
 	$: loadingName = 'Loading...'
-	$: name = 'Name'
-	$: staffMembers = []
-	$: news = []
-	$: showLogo = false
 	var musicElement = null
 
+	actualVolume.subscribe(newValue => {
+		if (musicElement) {
+			musicElement.volume = newValue
+		}
+	})
+
 	onMount(() => {
-		musicElement.volume = 0.1
 		actualPercent.set(percent)
 
 		window.addEventListener('message', function (e) {
@@ -40,10 +41,15 @@
 			}
 		})
 
-		name = window.nuiHandoverData.name
-		staffMembers = window.nuiHandoverData.staffMembers
-		news = window.nuiHandoverData.news
-		showLogo = window.nuiHandoverData.showLogo
+		if (window.nuiHandoverData) {
+			NUI_HANDOVER_DATA.set({
+				playerName: window.nuiHandoverData.playername,
+				serverName: window.nuiHandoverData.serverName,
+				sayings: window.nuiHandoverData.sayings,
+			})
+
+			actualVolume.set(window.nuiHandoverData.volume)
+		}
 	})
 </script>
 
@@ -61,38 +67,8 @@
 	<div
 		class="flex flex-col items-center justify-center absolute top-0 left-0 right-0 bottom-0 z-10"
 	>
-		<img
-			class:hidden={!showLogo}
-			src={logo}
-			alt="Server Logo"
-			class="w-1/4 -translate-y-5"
-		/>
-
-		<Welcome {name} />
+		<Welcome />
 		<ProgressBar {percent} {loadingName} />
-
-		<div
-			class="bg-zinc-950 space-y-5 fixed rounded bg-opacity-50 p-5 left-10 top-36 flex flex-col"
-			class:hidden={staffMembers.length === 0}
-		>
-			<h1 class="text-blue-500 font-bold text-4xl text-center">Staff</h1>
-			{#each staffMembers as member}
-				<StaffMember name={member.name} rank={member.rank} />
-			{/each}
-		</div>
-
-		<div
-			class="bg-zinc-950 space-y-5 fixed rounded bg-opacity-50 p-5 right-10 top-36 flex flex-col"
-			class:hidden={news.length === 0}
-		>
-			<h1 class="text-blue-500 font-bold text-4xl text-center">News</h1>
-			{#each news as item}
-				<NewsSection
-					title={item.title}
-					description={item.description}
-				/>
-			{/each}
-		</div>
 
 		<audio bind:this={musicElement} autoplay loop>
 			<source src={music} type="audio/mp3" />
@@ -100,7 +76,3 @@
 		</audio>
 	</div>
 </div>
-
-<style>
-	/* Add your own custom styles here */
-</style>

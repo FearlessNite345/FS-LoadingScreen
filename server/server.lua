@@ -1,10 +1,15 @@
 AddEventHandler('playerConnecting', function(_, _, deferrals)
     local source = source
 
+    local playername = GetPlayerName(source)
+    local serverName = Config.serverName
+    local volume = Config.volume
+    local sayings = Config.sayings
+
     deferrals.handover({
-        name = GetPlayerName(source),
-        staffMembers = Config.staffMembers,
-        news = Config.news,
-        showLogo = Config.showLogo
+        playername = playername,
+        serverName = serverName,
+        volume = volume,
+        sayings = sayings,
     })
 end)
