@@ -30,14 +30,14 @@ local function checkVersion()
         function(Error, Version, Header)
             if Error ~= 200 then
                 printVersion(cur, 'Latest version: ^8Failed to fetch',
-                             '^8' .. Error)
+                             '^1' .. Error)
                 return
             end
 
             late = "Latest version: " .. Version
 
             if Version ~= current then
-                status = "^8Your" .. resourceName ..
+                status = "^1Your " .. resourceName ..
                              " version is outdated, Go to the download page to update to the latest."
             else
                 status = "^2" .. resourceName .. " is up to date!"
