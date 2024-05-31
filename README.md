@@ -4,7 +4,7 @@
 ![GitHub Downloads (specific asset, latest release)](https://img.shields.io/github/downloads/FearlessNite345/FearlessStudios-LoadingScreen/latest/FearlessStudios-LoadingScreen.zip)
 
 ## Preview
-![Screenshot 2024-05-23 183730](https://github.com/FearlessNite345/FearlessStudios-LoadingScreen/assets/110247392/c4d0b76a-dc9b-4518-8d71-76f87a57aa3d)
+![image](https://github.com/FearlessNite345/FearlessStudios-LoadingScreen/assets/110247392/bca2d10b-92a8-4fe1-8071-0b4fd6046943)
 
 ## Contributing
 
