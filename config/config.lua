@@ -25,7 +25,6 @@ Config.staff = {
     {
         name = 'CHANGEME',  -- The players name
         rank = 'CHANGEME',  -- Rank name you want for that person example being Owner
-        color = '#111'  -- This is a color hex
     }
 }
 -- You can have as many staff as you want as it allows scrolling

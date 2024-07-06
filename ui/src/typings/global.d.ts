@@ -17,7 +17,6 @@ declare global {
 
   interface Staff {
     name: string,
-    rank: string,
-    color: string
+    rank: string
 }
 }

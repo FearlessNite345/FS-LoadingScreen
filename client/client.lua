@@ -1,9 +1,9 @@
-local firstSpawn = false							
+local firstSpawn = false
 
-AddEventHandler("playerSpawned", function ()
+AddEventHandler("playerSpawned", function()
 	if not firstSpawn then
 		ShutdownLoadingScreenNui()
-		if Config.useCanXSpawnSelector then 
+		if Config.useCanXSpawnSelector then
 			TriggerServerEvent('CanX-SpawnSelector:OpenSpawner')
 		end
 		firstSpawn = true

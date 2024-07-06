@@ -26,8 +26,7 @@
 	<div class="overflow-y-auto space-y-4 hide-scrollbar p-4">
 		{#each staff as member}
 			<div
-				class="w-full bg-opacity-40 backdrop-filter backdrop-blur-lg shadow-lg rounded-2xl p-4 h-16 flex items-center justify-center"
-				style="background-color: {member.color};"
+				class="bg-blue-800 w-full bg-opacity-40 backdrop-filter backdrop-blur-lg shadow-lg rounded-2xl p-4 h-16 flex items-center justify-center"
 			>
 				<div class="flex flex-col items-center">
 					<span class="text-white text-2xl font-bold"
