@@ -19,3 +19,5 @@ AddEventHandler('playerConnecting', function(_, _, deferrals)
         news = news
     })
 end)
+
+exports['FS-Lib']:VersionCheck('FS-LoadingScreen', 'fearlessnite345/fs-loadingscreen')
