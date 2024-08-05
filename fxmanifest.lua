@@ -22,3 +22,7 @@ shared_script {
 files {
   'nui/**',
 }
+
+dependencies {
+  'FS-Lib'
+}
