@@ -1,7 +1,7 @@
 # FearlessStudios-LoadingScreen
 
-![Github All Releases](https://img.shields.io/github/downloads/FearlessNite345/FearlessStudios-LoadingScreen/total.svg)
-![GitHub Downloads (specific asset, latest release)](https://img.shields.io/github/downloads/FearlessNite345/FearlessStudios-LoadingScreen/latest/FearlessStudios-LoadingScreen.zip)
+![Github All Releases](https://img.shields.io/github/downloads/FearlessNite345/FS-loadingscreen/total.svg)
+![GitHub Downloads (all assets, latest release)](https://img.shields.io/github/downloads/fearlessnite345/fs-loadingscreen/latest/total)
 
 ## Preview
 ![image](https://github.com/FearlessNite345/FearlessStudios-LoadingScreen/assets/110247392/bca2d10b-92a8-4fe1-8071-0b4fd6046943)
