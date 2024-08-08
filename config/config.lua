@@ -7,6 +7,8 @@ Config.serverName =
 Config.volume = 0.1                 -- Music volume for the loading screen
 Config.videoID = 'o9tVz3JbjEs'      -- The youtube video id you want to be used for the background video
 
+-- You can make these sayings what ever you want just know anywhere {playername} is is where the persons name will be shown and
+-- same for the {servername} but it uses the Config.serverName above for that
 Config.sayings = {
     "Hello {playername}! You're now part of the {servername} community!",
     "Greetings {playername}! Dive into the adventures awaiting you on {servername}!",
@@ -18,15 +20,13 @@ Config.sayings = {
     "Howdy {playername}! {servername} promises a thrilling experience for you!",
     "Warm welcome, {playername}! Explore, enjoy, and make memories on {servername}!"
 }
--- You can make these sayings what ever you want just know anywhere {playername} is is where the persons name will be shown and
--- same for the {servername} but it uses the Config.serverName above for that
 
+-- You can have as many staff as you want as it allows scrolling
 Config.staff = {
     {
         name = 'CHANGEME',  -- The players name
         rank = 'CHANGEME',  -- Rank name you want for that person example being Owner
     }
 }
--- You can have as many staff as you want as it allows scrolling
 
 Config.news = '' -- Whatever you put in there will show inside the updates / news section

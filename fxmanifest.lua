@@ -1,7 +1,7 @@
 fx_version 'cerulean'
 game "gta5"
 author "FearlessStudios"
-version '1.3.1'
+version '1.4.0'
 lua54 'yes'
 
 loadscreen 'nui/index.html'
