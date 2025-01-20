@@ -8,7 +8,5 @@ export const NUI_HANDOVER_DATA = writable({
     playerName: 'playername',
     serverName: 'servername',
     sayings: ['Welcome {playername}! Enjoy your stay at {servername}!'],
-    staff: [],
-    news: '',
     videoID: ''
 })

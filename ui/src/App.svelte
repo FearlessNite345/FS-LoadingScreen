@@ -9,8 +9,6 @@
 	} from '@store/stores'
 	import { onMount } from 'svelte'
 	import ProgressBar from '@components/ProgressBar.svelte'
-	import Staff from '@components/Staff.svelte'
-	import News from '@components/News.svelte'
 
 	$RESOURCE_NAME = 'FearlessStudios-LoadingScreen'
 
@@ -38,9 +36,7 @@
 				playerName: window.nuiHandoverData.playername,
 				serverName: window.nuiHandoverData.servername,
 				sayings: window.nuiHandoverData.sayings,
-				staff: window.nuiHandoverData.staff,
-				news: window.nuiHandoverData.news,
-				videoID: window.nuiHandoverData.videoID,
+				videoID: window.nuiHandoverData.videoID
 			})
 
 			actualVolume.set(window.nuiHandoverData.volume)
@@ -64,8 +60,6 @@
 		class="flex flex-col items-center justify-center absolute top-0 left-0 right-0 bottom-0 z-10"
 	>
 		<Welcome />
-		<Staff />
-		<News />
 		<ProgressBar />
 
 		<audio bind:this={musicElement} autoplay loop>
