@@ -6,8 +6,6 @@ AddEventHandler('playerConnecting', function(_, _, deferrals)
     local volume = Config.volume
     local sayings = Config.sayings
     local videoID = Config.videoID
-    local staff = Config.staff
-    local news  = Config.news
 
     deferrals.handover({
         playername = playername,
@@ -15,8 +13,6 @@ AddEventHandler('playerConnecting', function(_, _, deferrals)
         volume = volume,
         sayings = sayings,
         videoID = videoID,
-        staff = staff,
-        news = news
     })
 end)
 

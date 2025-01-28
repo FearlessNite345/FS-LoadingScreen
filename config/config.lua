@@ -20,13 +20,3 @@ Config.sayings = {
     "Howdy {playername}! {servername} promises a thrilling experience for you!",
     "Warm welcome, {playername}! Explore, enjoy, and make memories on {servername}!"
 }
-
--- You can have as many staff as you want as it allows scrolling
-Config.staff = {
-    {
-        name = 'CHANGEME',  -- The players name
-        rank = 'CHANGEME',  -- Rank name you want for that person example being Owner
-    }
-}
-
-Config.news = '' -- Whatever you put in there will show inside the updates / news section
